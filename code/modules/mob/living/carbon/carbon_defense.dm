@@ -360,6 +360,8 @@
 						"<span class='notice'>You hug [src] to make [p_them()] feel better!</span>", target = src,\
 						target_message = "<span class='notice'>[M] hugs you to make you feel better!</span>")
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
+			for(var/datum/brain_trauma/trauma in M.get_traumas())
+				trauma.on_hug(M, src)
 			friendly_check = TRUE
 
 		if(friendly_check && HAS_TRAIT(M, TRAIT_FRIENDLY))
