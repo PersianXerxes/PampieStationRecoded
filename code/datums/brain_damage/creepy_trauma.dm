@@ -107,7 +107,7 @@
 		return
 
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, obsession, "<span class='warning'>You notice [examining_mob] staring at you...</span>", 3))
-		return COMSIG_BLOCK_EYECONTACT
+	return COMSIG_BLOCK_EYECONTACT
 
 /datum/brain_trauma/special/obsessed/proc/find_obsession()
 	var/list/viable_minds = list() //The first list, which excludes hijinks
