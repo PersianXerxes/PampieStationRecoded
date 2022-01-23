@@ -2501,6 +2501,52 @@
 	blood_state = null
 	bloodiness = null
 
+/datum/reagent/consumable/urine
+	name = "Urine"
+	description = "Waste product from some animal. Completely useless."
+	taste_description = "a horrible mistake"
+	data = list("donor"=null,"viruses"=null,"donor_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null)
+	reagent_state = LIQUID
+	color = "#FFD700"
+	can_synth = FALSE
+	var/decal_path = /obj/effect/decal/cleanable/waste/peepee
+
+/datum/reagent/consumable/urine/reaction_turf(turf/T, reac_volume)
+	if(!istype(T))
+		return
+	if(reac_volume < 10)
+		return
+
+	var/obj/effect/decal/cleanable/semen/S = locate() in T
+	if(!S)
+		S = new decal_path(T)
+	if(data["blood_DNA"])
+		S.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"]))
+
+/obj/effect/decal/cleanable/waste
+	icon = 'icons/incon/accidents.dmi'
+	gender = NEUTER
+
+/obj/effect/decal/cleanable/waste/peepee
+	name = "urine"
+	desc = "A puddle of urine. Looks like we have a leaker."
+	persistent = FALSE
+	density = 0
+	layer = ABOVE_NORMAL_TURF_LAYER
+	icon_state = "peepee"
+
+/obj/effect/decal/cleanable/waste/peepee/Initialize(mapload)
+	. = ..()
+	add_blood_DNA(list("Non-human DNA" = "A+"))
+	AddComponent(/datum/component/slippery, 80, (NO_SLIP_WHEN_WALKING | SLIDE))
+
+/obj/effect/decal/cleanable/waste/peepee/replace_decal(obj/effect/decal/cleanable/waste/peepee/P)
+	if(P.blood_DNA)
+		blood_DNA |= P.blood_DNA
+	return ..()
+
+// End body fluids
+
 /datum/reagent/determination
 	name = "Determination"
 	description = "For when you need to push on a little more. Do NOT allow near plants."

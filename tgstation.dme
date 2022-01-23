@@ -2305,6 +2305,7 @@
 #include "code\modules\incon\diaperstatus.dm"
 #include "code\modules\incon\diapvending.dm"
 #include "code\modules\incon\hypno.dm"
+#include "code\modules\incon\pee.dm"
 #include "code\modules\incon\reagents.dm"
 #include "code\modules\incon\regressoray.dm"
 #include "code\modules\instruments\instrument_data\_instrument_data.dm"

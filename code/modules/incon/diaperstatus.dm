@@ -215,13 +215,15 @@ var/database/db = new("code/modules/incon/InconFlavortextDB.db")
 				var/mob/living/carbon/human/H = src
 				if(H.hidden_underwear == TRUE || H.underwear == "Nude")
 					pee = 0
-					new /obj/effect/decal/cleanable/waste/peepee(loc, get_static_viruses())
+					generate_pee(/datum/reagent/consumable/urine, src, loc)
+					//new /obj/effect/decal/cleanable/waste/peepee(loc)
 			if(wetness + pee < 200 + heftersbonus)
 				wetness = wetness + pee
 				pee = 0
 			else
 				wetness = 200 + heftersbonus
-				new /obj/effect/decal/cleanable/waste/peepee(loc, get_static_viruses())
+				generate_pee(/datum/reagent/consumable/urine, src, loc)
+				//new /obj/effect/decal/cleanable/waste/peepee(loc)
 			if(max_wetcontinence > 25)
 				max_wetcontinence-=1
 		pee = 0
@@ -976,7 +978,7 @@ var/database/db = new("code/modules/incon/InconFlavortextDB.db")
 	diapstats.hud = src
 	infodisplay += diapstats
 
-/obj/effect/decal/cleanable/waste
+/*/obj/effect/decal/cleanable/waste
 	icon = 'icons/incon/accidents.dmi'
 	gender = NEUTER
 
@@ -988,7 +990,7 @@ var/database/db = new("code/modules/incon/InconFlavortextDB.db")
 
 /obj/effect/decal/cleanable/waste/peepee/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
-	AddComponent(/datum/component/slippery, 80, (NO_SLIP_WHEN_WALKING | SLIDE))
+	AddComponent(/datum/component/slippery, 80, (NO_SLIP_WHEN_WALKING | SLIDE))*/
 
 /datum/mood_event/soggysad
 	description = "<span class='warning'>Aw man, my pants are wet...\n</span>"

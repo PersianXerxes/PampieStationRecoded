@@ -331,6 +331,8 @@
 		/obj/effect/decal/cleanable/insectguts,
 		/obj/effect/decal/cleanable/semen,
 		/obj/effect/decal/cleanable/semen/femcum,
+		/obj/effect/decal/cleanable/waste,
+		/obj/effect/decal/cleanable/waste/peepee,
 		/obj/effect/decal/cleanable/generic,
 		/obj/effect/decal/cleanable/glass,,
 		/obj/effect/decal/cleanable/cobweb,
