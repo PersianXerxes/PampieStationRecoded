@@ -63,7 +63,7 @@
 	filling_color = "#ee7676"
 	tastes = list("fish" = 1, "pan seared vegtables" = 1)
 	foodtype = MEAT | VEGETABLES | FRIED
-	
+
 /obj/item/reagent_containers/food/snacks/sushi_basic
 	name = "funa hosomaki"
 	desc = "A small cylindrical kudzu skin, filled with rice and fish."
@@ -391,7 +391,7 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("meat" = 3, "smokey sauce" = 1)
 	foodtype = MEAT
-	
+
 /obj/item/reagent_containers/food/snacks/goliathcalamari
 	name = "goliath calamari"
 	desc = "ACKCHYUALLY, this isn't calamari, guys!"
@@ -473,3 +473,10 @@
 	list_reagents = list(/datum/reagent/consumable/eggyolk = 5)
 	tastes = list("dried eggs" = 1, "confusion" = 1)
 	dried_being = /mob/living/simple_animal/chicken
+
+/obj/item/reagent_containers/food/snacks/cube/bee
+	name = "bee cube"
+	desc = "We were sure it was a good idea. Just add water."
+	list_reagents = list(/datum/reagent/consumable/honey = 10, /datum/reagent/toxin = 5)
+	tastes = list("buzzing" = 1, "honey" = 1, "regret" = 1)
+	dried_being = /mob/living/simple_animal/hostile/poison/bees

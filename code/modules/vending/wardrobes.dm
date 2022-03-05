@@ -188,7 +188,8 @@
 	icon_state = "cargodrobe"
 	product_ads = "Upgraded Assistant Style! Pick yours today!;These shorts are comfy and easy to wear, get yours now!"
 	vend_reply = "Thank you for using the CargoDrobe!"
-	products = list(/obj/item/clothing/suit/hooded/wintercoat/cargo = 3,
+	products = list(/obj/item/storage/bag/mail = 3,
+					/obj/item/clothing/suit/hooded/wintercoat/cargo = 3,
 					/obj/item/clothing/under/rank/cargo/tech = 5,
 					/obj/item/clothing/under/rank/cargo/tech/skirt = 5,
 					/obj/item/clothing/under/rank/cargo/util = 5,
@@ -200,6 +201,8 @@
 					/obj/item/radio/headset/headset_cargo = 3,
 					/obj/item/diaper/supply = 45,
 					/obj/item/diaper/miner = 45)
+	premium = list(/obj/item/clothing/head/mailman = 1,
+					/obj/item/clothing/under/misc/mailman = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/cargo_wardrobe
 	payment_department = ACCOUNT_CAR
 	cost_multiplier_per_dept = list(ACCOUNT_CAR = 0)
